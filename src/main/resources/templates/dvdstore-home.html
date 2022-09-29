@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>DVDStore home</title>
+    </head>
+    <body>
+        <h1>Bienvenue sur la page des Films</h1>
+        <table border="1">
+            <tr th:each= "movie: ${movies}">
+                <td>
+                    <a th:href="@{/movie/{id} (id=${movie.getId()})}" th:text="${movie.title}"></a>
+                </td>
+                <td th:text="${movie.genre}"></td>
+            </tr>
+        </table>
+        <a th:href="@{/movie/add-movie-form}">Accéder au formulaire d'ajout de film</a>
+    </body>
+</html>
